@@ -7,14 +7,50 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <load src="./partials/header.html" />
-    <main>
-      <load src="./partials/hero.html" />
-      <load src="./partials/benefits.html" />
-      <load src="./partials/ingredients.html" />
-      <load src="./partials/made.html" />
-      <load src="./partials/review.html" />
-      <load src="./partials/footer.html" />
-    </main>
+    <!-- header -->
+    <header class="header"></header>
+    <div class="container"></div>
+    <a class="header-logo" href="/src/index.html">
+      <span>simply</span>chokolate
+      <svg class="icon" width="21" height="21">
+        <use href="./img/icons.svg#icon-chocolate"></use>
+      </svg>
+    </a>
+    <nav class="header-navigation">
+      <ul class="header-nav-list">
+        <li class="header-nav-item">Home<a href="#"></a></li>
+        <li class="header-nav-item">How it&#8217;s made?<a href="#"></a></li>
+        <li class="header-nav-item">Chocolate is loved<a href="#"></a></li>
+      </ul>
+      <ul class="icon-list">
+        <li class="icon-list-item">
+          <a
+            class="icon-link"
+            href="#"
+            target="_blank"
+            aria-label="Open Instagram link"
+          >
+            <svg class="icon" width="24" height="24">
+              <use href="./img/icons.svg#icon-instagram"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="icon-list-item">
+          <a
+            class="icon-link"
+            href="#"
+            target="_blank"
+            aria-label="Open Twiter link"
+          >
+            <svg class="icon" width="24" height="24">
+              <use href="./img/icons.svg#icon-twitter"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <main></main>
+
+    <script type="module" src="./main.js"></script>
   </body>
 </html>
