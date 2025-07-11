@@ -4,10 +4,166 @@
 @import url('./reset.css');
 
 /* SECTIONS STYLES */
-@import url('./header.css');
-@import url('./hero.css');
-@import url('./benefits.css');
-@import url('./ingredients.css');
-@import url('./made.css');
-@import url('./reviev.css');
-@import url('./footer.css');
+
+/* header */
+
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  padding-bottom: 14px;
+}
+.header-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3.5px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: var(--black);
+}
+.logo-part {
+  font-style: italic;
+}
+.header-logo .icon {
+  margin-left: 5px;
+}
+.header-navigation {
+  display: none;
+}
+.menu-open {
+  display: flex;
+}
+.menu-open .icon {
+  display: flex;
+  stroke: var(--black);
+}
+@media screen and (min-width: 768px) {
+  .header .container {
+    padding: 28px 32px;
+  }
+  .header-navigation {
+    display: flex;
+  }
+  .header-nav-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    margin-right: 48px;
+  }
+  .header-nav-link {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: -0.02em;
+    color: var(--black);
+    transition: color var(--time) var(--tratsiyion);
+  }
+  .header-nav-link:hover,
+  .header-nav-link:focus {
+    color: var(--orange);
+  }
+  .icon-list {
+    display: flex;
+    gap: 18px;
+  }
+  .icon-link .icon {
+    fill: var(--white);
+    stroke: var(--black);
+    transition: stroke var(--time) var(--tratsiyion);
+  }
+  .icon-link .icon:hover,
+  .icon-link .icon:focus {
+    stroke: var(--orange);
+  }
+  .menu-open {
+    display: none;
+  }
+}
+@media screen and (min-width: 1158px) {
+  .header-logo {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.11;
+    letter-spacing: -0.02em;
+  }
+  .header-nav-list {
+    margin-right: 90px;
+  }
+}
+/* hero */
+.hero {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 375px;
+  height: 620px;
+  border-radius: 30px;
+  background-image: linear-gradient(
+      rgba(17, 17, 17, 0.4),
+      rgba(17, 17, 17, 0.4)
+    ),
+    url('../img/hero_bgr_mob.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.hero .container {
+  padding: 395px 40px 20px 40px;
+}
+.hero-title {
+  max-width: 285px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: var(--white);
+}
+.hero-btn-list {
+  margin-top: 32px;
+}
+li:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 28px;
+  height: 41px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--white);
+}
+.modal_open {
+  min-width: 120px;
+  border: 0;
+  background-color: var(--orange);
+}
+.btn-outline {
+  padding: 0;
+  border: 1px solid #fff;
+  min-width: 159px;
+  background: transparent;
+}
+.scroll {
+  display: flex;
+  align-items: center;
+  margin-top: 32px;
+  color: var(--white);
+}
+.icon {
+}
+
+@media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 1158px) {
+}

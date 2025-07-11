@@ -55,3 +55,28 @@ input {
   outline: none;
   border: 0;
 }
+
+/* --------- */
+
+/* ul {
+  list-style: none;
+}
+input,
+button,
+textarea {
+  outline: none;
+  border: 0;
+}
+a {
+  text-decoration: none;
+}
+textarea {
+  resize: none;
+}
+img {
+  display: block;
+  object-fit: cover;
+}
+address {
+  font-style: normal;
+} */
