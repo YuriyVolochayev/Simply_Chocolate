@@ -8,3 +8,17 @@
     
 // }
 // console.log(squareArr(Arr));
+
+
+// function calcBmi(weight, height) {
+//     let numWeight = Number.parseFloat(weight.replace(",", "."));
+//     let numHeight = Number.parseFloat(height);
+
+//     const bmi = (numWeight / (numHeight ** 2)).toFixed(1);
+
+//     return bmi; /*toFixed(1);*/
+    
+// }
+
+// const bmi = calcBmi("88,3", "1.75");
+// console.log(bmi);
