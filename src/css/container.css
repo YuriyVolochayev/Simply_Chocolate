@@ -21,9 +21,9 @@
     padding-top: 80px;
   }
 }
-@media screen and (min-width: 1158px) {
+@media screen and (min-width: 1200px) {
   .container {
-    max-width: 1158px;
+    max-width: 1200px;
   }
   .section {
     padding-top: 100px;

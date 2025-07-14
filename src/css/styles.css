@@ -85,7 +85,7 @@
     display: none;
   }
 }
-@media screen and (min-width: 1158px) {
+@media screen and (min-width: 1200px) {
   .header-logo {
     font-weight: 700;
     font-size: 18px;
@@ -193,9 +193,6 @@ li:first-child {
         rgba(17, 17, 17, 0.4)
       ),
       url('../img/hero_bgr_tab.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
   }
   .hero .container {
     padding: 671px 72px 40px 72px;
@@ -214,7 +211,7 @@ li:first-child {
 
   .btn {
     padding: 14px 40px;
-    height: 41px;
+    height: 45px;
   }
   .modal_open {
     min-width: 144px;
@@ -224,7 +221,8 @@ li:first-child {
     min-width: 183px;
   }
   .scroll {
-    justify-content: center;
+    margin-left: 153px;
+    margin-top: 0;
   }
   .scroll-btn {
     width: 38px;
@@ -232,10 +230,10 @@ li:first-child {
     margin-left: 14px;
   }
   .scroll .icon {
-    width: 16px;
-    height: 16px;
+    width: 22px;
+    height: 22px;
   }
-  @media screen and (min-width: 767px) and (min-resolution: 2x) {
+  @media screen and (min-width: 768px) and (min-resolution: 2x) {
     .frst-section {
       background-image: linear-gradient(
           rgba(17, 17, 17, 0.4),
@@ -245,5 +243,44 @@ li:first-child {
     }
   }
 }
-@media screen and (min-width: 1158px) {
+@media screen and (min-width: 1200px) {
+  .hero {
+    max-width: 1200px;
+    height: 600px;
+    background-image: linear-gradient(
+        rgba(17, 17, 17, 0.4),
+        rgba(17, 17, 17, 0.4)
+      ),
+      url('../img/hero_bgr_desk.jpg');
+  }
+  .hero .container {
+    padding: 381px 72px 40px 72px;
+  }
+  .hero-title {
+    max-width: 484px;
+  }
+
+  .hero-btn-list {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+  }
+
+  .btn {
+    height: 45px;
+  }
+
+  .scroll {
+    margin-left: 585px;
+    margin-top: 0;
+  }
+  @media screen and (min-width: 1200px) and (min-resolution: 2x) {
+    .frst-section {
+      background-image: linear-gradient(
+          rgba(17, 17, 17, 0.4),
+          rgba(17, 17, 17, 0.4)
+        ),
+        url('../img/hero_bgr_desk@2x.jpg');
+    }
+  }
 }
