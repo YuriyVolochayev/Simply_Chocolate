@@ -41,3 +41,17 @@
 // const message = sum >= 0 ? 'Positive' : 'Negative';
 
 // console.log(message);
+
+// const hours = 15;
+// const minutes = 0;
+
+// let time;
+
+// if (minutes > 0) {
+//     time = `${hours} г. ${minutes} хв.`
+// } else {
+//     time = `${hours} г.`
+// }
+    
+// console.log(time);
+
