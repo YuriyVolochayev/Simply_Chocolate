@@ -151,3 +151,185 @@
 
 // console.log("canOpenChat", canOpenChat);
 
+// --------------- методи рядків --------------
+
+// slice
+// toLowerCase
+// toUpperCase
+// includes
+// startsWith / endsWith
+// indexOf
+// trim
+
+
+
+// const user = "Yurii Volochaeiv";
+
+// const a = user.slice(1, 5);
+// console.log(a);
+
+// console.log(user.slice(0, 3)); // від якого вирізаємо і до якого(не включаючи)
+
+// const user = "Yurii Volochaeiv";
+
+// const user = "            Yurii Volochaeiv             ";
+
+// console.log(user.toLowerCase());
+// console.log(user.toUpperCase());
+
+// console.log(user.includes("Yu")); // метод includes чутливий до регістрів
+// console.log(user.includes("yu"));
+
+// console.log(user.startsWith("Yu"));
+// console.log(user.startsWith("yu"));
+
+// console.log(user.endsWith("Yu"));
+// console.log(user.endsWith("yu"));
+// console.log(user.endsWith("iv"));
+
+// console.log(user.indexOf("yu")); // чутливий до регістру
+// console.log(user.indexOf("Yu")); //при передачі двох літер поверне індекс першої
+// console.log(user.indexOf("i")); //якщо в рядку дві однакові літере - поверне індекс першої
+// console.log(user.indexOf(" ")); //пробіл також індексуються
+
+// console.log(user);
+// console.log(user.trim()); // метод trim прибирає всі зайві пробіли з початку і кінця рядків
+
+
+// let link = "https://my-site.com/about/";
+
+// if (!link.endsWith("/")) {
+//     link += "/"; // "link += "/""" === "link = link + "/"""
+// } else {
+//     console.log("Everythyng is fine");
+//     }
+// console.log(link);
+
+// let link = "https://my-site.com/about";
+
+// // if (!link.endsWith("/") && link.includes("my-site")) {
+// //     link += "/"
+// // }
+
+// link = !link.endsWith("/") && link.includes("my-site") ? link += "/" : link;// виконання за допомогою тернарного оператора
+    
+// console.log(link);
+
+
+
+// const blackListWord1 = "spam";
+// const blackListWord2 = "sale";
+
+// const string1 = "Hello, I Abdul, this is not spam.";
+// const string2 = "Biggest SALE this week, dont miss out!";
+// const string3 = "#fatlivesmatter advertising campain";
+
+// console.log(string1.includes(blackListWord1));
+// console.log(string1.includes(blackListWord2.toLowerCase()));
+
+// console.log(string2.includes(blackListWord1));
+// console.log(string2.toLowerCase().includes(blackListWord2));
+
+// -------------------ЦИКЛИ------------------
+
+// for
+// wile
+// do wile
+
+// console.log("Before");
+
+// for (let i = 0; i < 10; i += 1) {
+//     console.log(i);
+    
+// }
+
+// for (let i = 10; i >= 0; i -= 1) {
+//     console.log(i);
+    
+// }
+
+
+// console.log("After");
+
+// const user = "Alice";
+// for (let i = 0; i < user.length; i += 1) {
+//     console.log(user[i], i);
+    
+// }
+// ІНКРЕМЕНТ
+
+// let a = 10;
+
+// const b = ++a;// a = a + 1; b = b + 1
+
+// const d = a++;// d = a = 10; a = a + 1
+
+// // a++;
+// // ++a;
+
+// console.log("a", a);
+// console.log("b", b);
+// console.log("d", d);
+
+
+// let a = 10;
+
+// --a;
+
+// console.log("a", a);
+
+
+
+// while
+// do...while - дія 100% виконається один раз
+
+
+// console.log("Before");
+
+// let counter = 11;
+
+// // while (counter < 10) {
+// //     console.log(counter);
+// //     counter++
+    
+// // }
+
+// do {
+//     console.log(counter);
+//     counter++
+    
+// } while (counter < 5);
+
+
+// console.log("After");
+
+
+//**напиши цикл for який виводить у консоль браузера
+// числа за зростанням від а до b,
+// але які кратні 5
+
+
+// const a = 20;
+// const b = 100;
+// for (let i = a; i < b; i++) {
+//     // if(i % 5 === 0) {
+//     //     console.log(i);
+//     // }
+
+//     if(!(i % 5)) {
+//         console.log(i);
+//     }
+// }
+
+// const min = 0;
+// const max = 6;
+// let total = 0;
+
+// for (let i = min; i <= max; i++) {
+//     if(!(i % 2)) {
+//         total += i;
+
+//         console.log(total);
+        
+//     }
+// }
