@@ -333,3 +333,216 @@
         
 //     }
 // }
+
+// МАСИВИ
+
+// const arr = ["string", 25, true]; // індексована сутність
+
+// arr[2] = false;// заиіна елемента масиву через індекс
+
+// console.log(arr);
+// console.log(arr.length);// повертає довжину масиву,
+// console.log(arr[2]);// зверення до елементу масиву через індекс
+
+
+// let a = [1, 2, 3];// присвоюється посилання
+// const b = a; // передається посилання яке збереглося в "а"
+
+// a[0] = 100;
+
+// console.log("a", a);
+// console.log("b", b);
+// console.log(a === b);// одне посилання - true. Масиви порівнюється за посиланням
+
+// const x = [1, 2, 3];
+// const y = [1, 2, 3];
+
+// console.log(x === y);// різні масиви = різні посилання - false
+
+
+// const arr = ["HTML", "CSS", "JS", "React"];
+
+// console.log(arr);
+
+
+// const str = arr.join(" ");// перетворює масив в рядок
+// console.log(str);
+
+// const arr1 = str.split(" ");// перетворює рядок на масив. В метод передаємо по чому ріжимо рядок.
+
+// console.log(arr1);
+
+
+// const arr = ["HTML", "CSS", "JS", "React"];
+
+// const arr1 = arr.slice(0, 3);// сворює новий масив від елемента з 0 індексом і до елемента з індексом 3 не вкючаючи його
+
+// console.log(arr1);
+
+// const arr2 = arr.slice(1);
+
+// console.log(arr2);// якщо передати тільки 1 аргумент то зробить новий масив від елемента індекс який вказали і до кінця
+
+// const arr3 = arr.slice();// якщо не вказати аргументи метод створить точну копію масиву
+// console.log(arr3);
+
+// const arr4 = arr.slice(-3);
+
+// console.log(arr4);
+
+// const arr = ["HTML", "CSS", "JS", "React"];
+
+// const arr1 = [1, 2, 3, 4];
+
+// const arr2 = ["tototo", "lalala"];
+
+// const arr3 = arr.concat(arr1, arr2);// послідовність додавання залежить від послідовності атрибутів у методі
+
+// // console.log(arr3);
+
+// const index = arr3.indexOf("pupupu");// повертає індекс елемента. Якщо передати неіснуючий елемент - поверне -1. Чутливий до регістру.
+
+// console.log(index);
+
+// const arr = ["HTML", "CSS", "JS", "React"];
+
+// const arr1 = [1, 2, 3, 4];
+
+// const arr2 = ["tototo", "lalala"];
+
+// arr.push("pupupu"); додає переданий аргумент в кінець масиву
+
+// console.log(arr);
+
+// arr1.push(5, 6, 7);
+
+// console.log(arr1);
+
+// arr.pop();// метод видаляє з кінця елемент
+
+// console.log(arr);
+
+
+// const arr = ["HTML", "CSS", "JS", "React", "tototo", "lalala"];
+
+// for (let i = 0; i < arr.length; i++) {
+//     console.log(arr[i], i);
+    
+// }
+
+// for (let i = 0; i < arr.length; i++) {
+
+//     arr[i] += `-${i}`
+//     console.log(arr);
+    
+// }
+
+// const arr = ["HTML", "CSS", "JS", "React", "tototo", "lalala"];
+
+// for (const scills of arr) {// доступ до кожного елемента масиву
+//     console.log(scills);
+    
+// }
+
+// const arr = ["HTML", "CSS", "JS", "React", "tototo", "lalala"];
+
+// if(arr.includes("CSS")) {
+//     console.log("SuperPuper");
+// } else {
+//     console.log("WTF");
+    
+// }
+
+// const values = "8 10";
+
+// const valuesArr = values.split(" ");
+
+// console.log(valuesArr);
+
+// const square = valuesArr[0] * valuesArr[1];
+
+// console.log(square);
+
+// const fruits = ["🍎", "🍌", "🍐", "🍑", "🍋", "🍇"];
+
+// // for (const fruit of fruits) {
+// //     console.log(fruit);
+    
+// // }
+
+// for (let i = 0; i < fruits.length; i++) {
+//     console.log(`${i + 1}: ${fruits[i]}`);
+// }
+
+// const arr = [1, 5, 8, 9, 12, 4, 30, 18, 14,];
+
+// let total = 0;
+
+// for (const num of arr) {
+//     if (num % 2 === 0) {
+//         total += num;
+//     }
+    
+// }
+// console.log(total);
+
+// const names = "Yurii, Valera, Petya, Dima";
+// const numbers = "1111, 2222, 3333, 4444";
+
+// const namesArr = names.split(",");
+// const numbersArr = numbers.split(",");
+
+// for (let i = 0; i < namesArr.length; i++) {
+//     console.log(`${namesArr[i]}: ${numbersArr[i]}`);
+    
+// }
+
+// const string = "    Welcome to the future    ";
+
+// const arr = string.trim().split(" ");
+
+// console.log(arr);
+
+// const res = arr.slice(1, arr.length - 1).join(" ");
+// console.log(res);
+
+// const arr = [5, 8, 9, 12, 4, 30, 18, 14,];
+
+// let min;
+
+// for (let i = 0; i < arr.length; i++) {
+//     if (i === 0) { 
+//         min = arr[i]
+//     } else {
+//         if (arr[i] < min) {
+//             min = arr[i]
+//         }
+//     }
+// }
+//  console.log(min);
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
