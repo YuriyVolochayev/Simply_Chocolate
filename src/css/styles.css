@@ -581,6 +581,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
     width: calc((100% - 57) / 4);
   }
 
@@ -588,6 +591,8 @@
     position: absolute;
     display: flex;
     flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
     gap: 8px;
     width: 100%;
     height: 100%;
@@ -596,9 +601,12 @@
     padding-top: 20px;
     border-radius: 15px;
     transform: translateX(100%);
-    transition: transform var(--time) var(--transition);
+    transition: transform var(--time) var(--transition),
+      opacity var(--time) var(--transition),
+      visibility var(--time) var(--transition);
     background-color: var(--white);
   }
+
   .overlay-title {
     font-weight: 600;
     font-size: 18px;
@@ -607,9 +615,12 @@
   }
   .overlay-list {
     display: flex;
-    gap: 6px;
   }
   .overlay-list-item {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    gap: 6px;
   }
   .overlay-subtitle {
     display: flex;
@@ -618,7 +629,7 @@
     font-size: 10px;
     line-height: l(12, 10);
     padding: 6px 16px;
-    color: #fff;
+    color: var(--white);
     border-radius: 35px;
     background: var(--orange);
   }
@@ -636,6 +647,7 @@
     margin-top: 6px;
   }
   .ingr-list-item:hover .overlay {
+    transform: translateX(0);
     opacity: 1;
     visibility: visible;
   }
