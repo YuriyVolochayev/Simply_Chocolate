@@ -511,7 +511,7 @@
 // let min;
 
 // for (let i = 0; i < arr.length; i++) {
-//     if (i === 0) { 
+//     if (i === 0) {
 //         min = arr[i]
 //     } else {
 //         if (arr[i] < min) {
@@ -521,28 +521,322 @@
 // }
 //  console.log(min);
  
+// function foo(a, b, c) {
+
+//     // const arr = [1, 2, 3]
+//     // console.log(arguments);// не виколистовуються методи масиву
+//     const args = Array.from(arguments);
+//     console.log(args);
+//     console.log(args.join(" "));
+    
+// }
+
+// foo(1, 2, 3);
+
+// const add = function () {
+//     const args = Array.from(arguments);
+//     let total = 0;
+//     for (let i of args) {
+//         total += i
+//     }
+//     return total;
+// }
+
+// console.log(add(1, 2, 3));
+// console.log(add(1, 2, 3, 4, 5));
+
+// function calAvarage() {
+//     let total = 0;
+//     for (let i = 0; i < arguments.length; i++) {
+//         total += arguments[i];
+//     }
+//     return total / arguments.length
+// }
+// console.log(calAvarage(1, 2, 3));
+// console.log(calAvarage(1, 2, 3, 4, 5));
+
+
+// СТЕКИ ВИКЛИКІВ ФУНКЦІЇ
+
+// function fnA() {
+//     console.log("виклик функції fnA");
+    
+// }
+
+// function fnB() {
+//     console.log("виклик функції fnB");
+    
+// }
+
+// function fnC() {
+//     console.log("виклик функції fnC");
+    
+// }
+
+
+// console.log("before fnA");
+// fnA();
+// console.log("after fnA");
+
+// console.log("before fnB");
+// fnB();
+// console.log("after fnB");
+
+// console.log("before C");
+// fnC();
+// console.log("after fnC");
+
+
+// function bar() {
+//     console.log("bar");
+    
+// }
+//  function baz() {
+//     console.log("baz");
+    
+// }
+ 
+// function foo() {
+//     console.log("foo");
+//     bar();
+//     baz();
+    
+// }
+
+// foo();
+
+// function logItems(items) {
+//     for(let i = 0; i < items.length; i++) {
+//         console.log(`${i + 1} - ${items[i]}`);
+        
+//     }
+// }
+
+// logItems(["HTML", "CSS", "JS", "React", "tototo", "lalala"]);
+// logItems(["🍎", "🍌", "🍐", "🍑", "🍋", "🍇"]);
+
+// const names = "Jacob,William,Solomon,Artemis";
+
+// const phones = "050555333,066444222,099999888,077888666";
+
+// function printInfo(names, phones) {
+//     const namesArr = names.split(",");
+//     const phonesArr = phones.split(",");
+
+//     for (let i = 0; i < namesArr.length; i++) {
+//         console.log(`${namesArr[i]}: ${phonesArr[i]}`);
+//     }
+        
+// }
+// printInfo(
+//     "Jacob,William,Solomon,Artemis",
+//     "050555333,066444222,099999888,077888666");
 
 
 
+// function formatTime(totalMinutes) {
+//     const hours = Math.floor(totalMinutes / 60);
+//     const minutes = totalMinutes % 60;
+//     // console.log(hours);
+//     // console.log(minutes);
+
+//     // перетворимо змінну на рядок
+
+//     const douleHours = String(hours).padStart(2, "0");
+//     const doubleMinutes = String(minutes).padStart(2, "0");
+//     // метод padStart додає до рядка необхідну кількість символів
+//     //     * перший аргумент - необхіна кількіть символів
+//     // *другий аргумент - символ який передаєть на початок рядка, якщо його довжина менша ні та яку первіряємо (перший аргумент)
+
+//     return `${douleHours}:${doubleMinutes}`;
+// }
+
+
+// console.log(formatTime(70));
+// console.log(formatTime(460));
+// console.log(formatTime(1441));
 
 
 
+// const data = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+// function devideArr(arr, num) {
+//     const res = [];
+
+//     for (let i = 0; i < arr.length; i += num) {
+//         const comb = arr.slice(i, i + num);
+//         res.push(comb);
+//     }
+//     return res;
+// }
 
 
+// console.log(devideArr(data, 3));
+
+// Об'єкти
+
+// const playlist = ["Mood", 10, true];
+
+// const playlistObj = {
+//     name: "Mood",
+//     rating: 9,
+//     isFavorite: true,
+//     tracks: ["tr-1", "tr-2"]
+// };
+// // console.log(playlistObj.name);// коли відомий ім'я ключа
+
+// playlistObj.rating = 4;
+// playlistObj.name = 'Old'
+// playlistObj.year = 2015;
+
+// console.log(playlistObj);
+
+// const user = {
+//     name: "Will",
+//     age: 29,
+//     skills: {
+//         HTML: true,
+//         CSS: true,
+//         JS: true,
+//         React: false
+//     }
+// }
+
+// console.log(user.skills.JS);
+
+// const username = "Alice";
+// const age = 25;
+// const mail = 'sutr@gmail.com';
+
+// const userObj = {
+//     // name: username, // якщо ім'я ключа має таку саму назву як і значення використовуємо скорочений синтаксис
+//     // age: age,
+//     // mail: mail
+
+//     // username,
+//     // age,
+//     // mail
+
+// }
+
+// const username = "Alice";
+// const age = 25;
+// const mail = 'sutr@gmail.com';
+
+// function foo(name, email) {
+//     const obj = {
+//         name,
+//         email
+//     }
+//     return obj
+//     }
+// console.log(foo(username, mail));
+
+// const inputName = "color";
+
+// const obj = {
+//     [inputName]: "red"
+// }
+
+// console.log(obj);
+
+// перебір об'єкта. Цикли for...in-------------------------------------------------------------------------
+
+// const feedback = {
+//     good: 5,
+//     neutral: 8,
+//     bad: 11
+//     }
+
+// let total1 = 0;
+// for (const key in feedback) {
+//     total1 += feedback[key];
+//     console.log(feedback[key], key);
+//     console.log(total1);
+// }
+
+// // методи Object.key, Object.values ----------------------------------------------------------------------
+
+// const feedbackSecond = {
+//     good: 2,
+//     neutral: 9,
+//     bad: 1
+// }
+//     let total2 = 0
+
+// const keys = Object.keys(feedbackSecond); // метод складає ключи в масив
+
+// console.log(keys);
+// console.log(keys.length);
+
+// for (const key of keys) {
+//     console.log(feedbackSecond[key], key);
+//     total2 += feedbackSecond[key]
+//     }
+// console.log(total2);
+
+// //--------------------------------------------------------------------------------------------------------
+
+// const feedback3 = {
+//     good: 10,
+//     neutral: 10,
+//     bad: 10
+// }
+    
+// const values = Object.values(feedback3); // повертає масив значень об'єкта
+// let total3 = 0;
+// for (const key of values) {
+//     total3 += key;
 
 
+// }
+// console.log(total3);
 
+const user = {
+    name: "Will",
+    age: 29,
+    hobby: "origami",
+    premium: true
+}
 
+// user.mood = "happy";
+// user.hobby = "skydiving";
+// user.premium = false;
 
+// const keys = Object.keys(user);
+// for (const item of keys) {
+//     console.log(`${item} : ${user[item]}`);
+    
+// }
 
+// function foo(obj) {
+//     obj.mood = "happy";
+//     obj.hobby = "skydiving";
+//     obj.premium = false;
 
+//     const keys = Object.keys(obj);
+//     for (const item of keys) {
+//         console.log(`${item} : ${obj[item]}`);
+        
+//     }
+    
+// }
 
+// const teamSalary =  {
+//     Amanda: 5000,
+//     Peter: 6000,
+//     Pall: 4500,
+//     Cavin: 9000
+// }
 
+// let sum = 0;
 
+// const keys = Object.keys(teamSalary);
 
+// for (const key of keys) {
 
-
-
-
-
-
+//     sum += teamSalary[key]
+    
+    
+// }
+// console.log(sum);
