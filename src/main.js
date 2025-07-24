@@ -792,12 +792,12 @@
 // }
 // console.log(total3);
 
-const user = {
-    name: "Will",
-    age: 29,
-    hobby: "origami",
-    premium: true
-}
+// const user = {
+//     name: "Will",
+//     age: 29,
+//     hobby: "origami",
+//     premium: true
+// }
 
 // user.mood = "happy";
 // user.hobby = "skydiving";
@@ -840,3 +840,323 @@ const user = {
     
 // }
 // console.log(sum);
+
+//---------------------МЕТОДИ ОБ'ЄКТУ-------------------------------
+
+
+// const friends = [
+//     { name: "Ross", online: false },
+//     { name: "Joey", online: true },
+//     { name: "Chandler", online: false },
+//     { name: "Phoebe", online: true },
+//     { name: "Monica", online: true },
+//     { name: "Rachel", online: false },
+// ];
+// console.log(friends);
+// console.table(friends);
+
+//-----------------------ЗНАЙТИ ДРУГА ЗА ІМ'ЯМ--------------------------
+// function findByName(arr, name) {
+//     for (const item of arr) {
+//         // console.log(item.name);
+//         if (item.name === name.toLowerCase) {
+//             return item;
+//         }
+        
+//     }
+//     return "Not found"
+// }
+// console.log(findByName(friends, "Chandler"));
+
+//-------------------------ОТРИМАТИ ІМЕНА ВСІХ ДРУЗІВ--------------------
+
+// function getAllNAmes(arr) {
+//     const newArr = [];
+
+//     for (const i of arr) {
+//         newArr.push(i.name);
+//     }
+//     return newArr
+// }
+
+// console.log(getAllNAmes(friends));
+
+//-------------------------ОТРИМАТИ ІМЕНА ДРУЗІВ ONLINE--------------------
+
+// function getOnline(array) {
+//     const friendsOnline = [];
+
+//     for (const item of array) {
+//         if (item.online) {
+//             friendsOnline.push(item);
+//         }
+//     }
+//     return friendsOnline
+// }
+
+// console.log(getOnline(friends));
+
+//-------------------------------------------------------------------------------------------------------------------------------------------
+
+// const stones = [
+//     { name: "Сапфір", price: 1300, quantity: 4 },
+//     { name: "Діамант", price: 2000, quantity: 5 },
+//     { name: "Рубін", price: 1750, quantity: 2 },
+//     { name: "Смарагд", price: 1300, quantity: 3 },
+// ];
+
+// function totalPrice(arr, name) {
+//     let sum = 0;
+//     for (const i of arr) {
+//         if (i.name === name) {
+//             sum += i.price * i.quantity;
+//         }
+//     }
+//     return sum;
+// }
+// console.log(totalPrice(stones, "Сапфір"));
+// console.log(totalPrice(stones, "Діамант"));
+// console.log(totalPrice(stones, "Рубін"));
+// console.log(totalPrice(stones, "Смарагд"));
+
+
+
+
+//---------------------------------------------МЕТОДИ ОБ'ЄКТА. КЛЮЧОВЕ СЛОВO "this"--------------------------------------------------------
+
+
+
+
+// const playlist = {
+//     name: "Mood",
+//     rating: 9,
+//     tracks: ["tr-1", "tr-2", "tr-3"],
+
+//     changeName(newName) {
+//         // playlist.name = newName; краще використовувати this, щоб метод працював для інших об'єктів
+//         this.name = newName;
+//     }
+// };
+
+// playlist.changeName("BadMood")
+
+// const playlist2 = {
+//     name: "Cringe",
+//     rating: 4,
+//     tracks: ["tr-1", "tr-2", "tr-3"],
+// }
+// playlist2.changeName = playlist.changeName;
+// playlist2.changeName("NotCringe");
+
+// console.log(playlist);
+// console.log(playlist2);
+
+
+//------------------------------------------------------------------------------------------------------------------------------------------
+
+
+// const playlist = {
+//     name: "Mood",
+//     rating: 9,
+//     tracks: ["tr-1", "tr-2", "tr-3"],
+
+//     changeName(newName) {
+//         this.name = newName;
+//     },
+
+//     changeRating(newRate) {
+//         this.rating = newRate;
+//     },
+
+//     addTrack(newTrack) {
+//         this.tracks.push(newTrack);
+//     },
+// };
+// playlist.addTrack("tr-4");
+// playlist.changeRating(5);
+// console.log(playlist);
+
+
+//=================================================СИНТАКСИС SPRED та REST====================================================
+// rest оператор складає в масив
+
+// function sum(...num) {
+//     console.log(num);
+//     }
+
+// sum(1, 2, 3);
+// sum(1, 2, 3, 4, 5);
+
+//-----------------------------------------------------------------------------------------------------------
+
+// function foo(...args) {
+//     console.log(args);
+    
+// }
+
+// foo({ a: 1, b: 2, });
+
+//----------------------------------------------------------------------------------------------------------
+
+// spred розгортає
+
+// const num = [
+//     1000,
+//     ...[1, 2, 3],
+//     4000,
+//     ...[4, 5, 6],
+//     7000,
+//     ...[7, 8, 9]
+// ]
+
+// console.log(num);
+
+//===================================================================================================================
+
+/* ПОШУК НАЙБІЛЬШОГО ТА НАЙМЕНШОГО*/
+
+// const num = [18, 20, 9, 15, 33, 78, 100];
+
+
+// console.log(Math.max(...num));
+// console.log(Math.min(...num));
+
+//-------------------------------------------------------------------------------------------------------------------------------
+
+
+//=============================================СТВОРЕННЯМАСИВУ===================================================================
+
+// const a = [18, 20, 9];
+
+// // const b = a; одне і теж посилання/одне місце пам'яті
+// // console.log(a === b);
+// // console.log("a", a);
+// // console.log("b", b);
+
+// const b = [...a]; // різні посилання/різня місця пам'яті
+// console.log(a === b);
+// console.log("a", a);
+// console.log("b", b);
+
+//---------------------------------------------------------------------------------
+
+// const tu = [{ a: 2 }, { b: 4 }, { c: 6 },];
+
+// // об'єкт копіюється за посиланням. коли ми розгортаємо масив tu в масив bu, ми фактично копіюємо в нього посилання на об'єкти
+
+// const bu = [...tu];
+
+// tu[0].a = 100;
+
+// console.log("tu", tu);
+// console.log("bu", bu);
+
+
+//===================поєднання декількох масивів в один===============================================
+
+// const a = [1, 2, 3];
+// const b = [4, 5, 6];
+// const c = [7, 8, 9];
+
+// const newFullArr = [...a, ...b, ...c];
+
+// console.log(newFullArr);
+
+//--------------------------------------------------------------------------------------------------
+
+// const objA = { a: 2, b: 4 };
+// const objB = { a: 6, q: 8 };
+
+// const objC = {
+//     ...objA,  // a: 2, b: 4
+//     a: 10,   //   a: 10, b: 4
+//     ...objB,//  a: 6, b: 4, q: 8
+//     b: 20  //    a: 6, b: 20, q: 8
+// }
+
+
+
+// console.log(objA, objB, objC);
+
+
+//====================================================================================================
+
+// const Transaction = {
+//     DEPOST: "deposit",
+//     WITHDROW: "withdrow"
+// };
+
+// const account = {
+//     balance: 0,
+//     transactions: [],
+//     createTransaction(amount, type) {
+//         const obj = { id: amount, amount: amount, type: type };
+//         return obj;
+//     },
+// // ------------------метод що зараховує кошти на баланс----------------------------
+//     deposit(amount) {
+//         this.balance += amount;
+//         const transaction = this.createTransaction(amount, Transaction.DEPOST);
+//         this.transactions.push(transaction);
+//     },
+// // ------------------метод що знімає кошти з балансу----------------------------
+
+//     wihtdrow(amount) {
+//         if (this.balance < amount) {
+//             console.log("НЕДОСТАТНЬО КОШТІВ");
+//             return;
+//         }
+//         this.balance -= amount;
+//         const transaction = this.createTransaction(amount, Transaction.WITHDROW);
+//         this.transactions.push(transaction);
+//     },
+
+//     // ------------------метод що показує баланс----------------------------
+//     getBalance() {
+//         return this.balance;
+//     },
+
+//     // ------------------метод що шукає об'єкт транзакції по id----------------------------
+    
+//     getTransitionDetails(id) {
+//         for (const item of this.transactions) {
+//             if (item.id === id) {
+//                 return item;
+//             }
+//         }
+//     }, 
+    
+//     //----------------------------метод що повертає загальну суму певного типу транзакцій-----------------------
+    
+//     getTransactionTotal(type) {
+//         let sum = 0;
+
+//         for (const item of this.transactions) {
+//             if (item.type === type) {
+//                 sum += item.amount;
+//             }
+//         }
+//         return sum;
+//     }
+
+    
+// }
+
+// account.deposit(300);
+// account.deposit(300);
+
+// // account.wihtdrow(1000);
+// account.wihtdrow(200);
+// // console.log(account.getBalance());
+// console.log(account.getTransitionDetails(300));
+// console.log(account.getTransitionDetails(200));
+
+// console.log(account.getTransactionTotal(Transaction.DEPOST));
+// console.log(account.getTransactionTotal(Transaction.WITHDROW));
+
+
+
+
+
+
+
