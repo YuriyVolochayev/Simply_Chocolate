@@ -1124,7 +1124,7 @@
 //                 return item;
 //             }
 //         }
-//     }, 
+//     },
     
 //     //----------------------------метод що повертає загальну суму певного типу транзакцій-----------------------
     
@@ -1155,8 +1155,268 @@
 // console.log(account.getTransactionTotal(Transaction.WITHDROW));
 
 
+//==============================CALLBACK ФУНКЦІЇ======================================================
+
+// function fnA(str, callback) {
+//     console.log(str);
+// callback(100)
+// }
+
+
+// function fnB(num) {
+//     console.log(num);
+
+// }
+
+
+// fnA("Alice", fnB);
 
 
 
+// function foo1(a, b) {
+//     const result = a + b;
+//     const str = 'result';
+//     const strUp = str.toUpperCase();
+//     return `${strUp}: ${result}`;
+// }
+
+// function foo2(a, b) {
+//     const result = a - b;
+//     const str = 'result';
+//     const strUp = str.toUpperCase();
+//     return `${strUp}: ${result}`;
+// }
+
+// console.log(foo1(4, 5));
+// console.log(foo2(10, 2));
+
+//----------------------------------------------------------------------------------------------------
+
+// function calk(a, b, callback) {
+//     const result = callback(a, b);
+//     const str = 'result';
+//     const strUp = str.toUpperCase();
+//     return `${strUp}: ${result}`;
+// }
+
+// console.log(calk(10, 2, function (x, y) {
+//     return x + y
+// }));
+
+// console.log(calk(10, 2, function (x, y) {
+//     return x - y
+// }));
 
 
+//----------------------------------------------------------------------------------------------
+
+
+// function foo(arr, callback) {
+//     const newArr = [];
+
+//     for (const i of arr) {
+//         newArr.push(callback(i))
+//     }
+//     return newArr;
+// }
+
+// console.log(foo([66, 78, 32, 45, 63], function (value) {
+//     return value - 10;
+// }));
+
+// console.log(foo([66, 78, 32, 45, 63], function (value) {
+//     return value * 2;
+// }));
+
+// console.log(foo([66, 78, 32, 45, 63], function (value) {
+//     return value * 10;
+// }));
+
+
+//================================СТРІЛОЧНІ ФУНКЦІЇ============================================
+
+// const lalala = (a, b) => {
+//     return a + b;
+// }
+
+// console.log(lalala(3, 5)); // стрілочна функція з явним перетворенням
+
+
+// const tototo = (a, b) => a + b;
+
+// console.log(tototo(100, 100));//стрілочна функція з неявним перетворенням
+
+//=============================ПЕРЕБИРАЮ МЕТОДИ МАСИВІВ======================================
+
+//=============================МЕТОД FOR EACH================================================
+
+
+//метод нічого не повертає
+
+//-------------------------------------------------------------------------------------------
+// const num = [5, 10, 15, 20, 25];
+
+// num.forEach(function (num, isndex, arr) { // в функцію, яку метод приймає як параметр, передаються наступні параметри:
+// console.log(num, isndex, arr);// поточний елемент масиву; індекс цього елементу та посилання на вихідний масив
+
+// })
+
+//--------------------------------------------------------------------------------------------
+
+// const num = [5, 10, 15, 20, 25];
+
+// let total = 0;
+
+// num.forEach(item => {
+//     total += item;
+// })
+// console.log(total);
+
+//--------------------------------------------------------------------------------------------
+
+
+//виконай рефакторинг коду
+
+// function logItems(trulala) {
+//     for (let i = 0; i < trulala.length; i++) {
+//         console.log(`${i + 1} - ${trulala[i]}`);
+//     }
+// }
+
+// const logItems = (trulala) => {
+//     trulala.forEach((trulala, i) => {
+//         console.log(`${i + 1} - ${trulala}`);
+        
+//     });
+// }
+
+// logItems(["HTML", "CSS", "JS", "React"]);
+// logItems(["🍎", "🍌", "🍐", "🍑", "🍋", "🍇"]);
+
+//------------------------------------------------------------------------------------------------
+
+// function printInfo(names, phones) {
+//     const namesArr = names.split(",");
+//     const phonesArr = phones.split(",");
+
+//     for (let i = 0; i < namesArr.length; i++) {
+//         console.log(`${namesArr[i]}: ${phonesArr[i]}`);
+//     }
+// }
+
+//------------------------рефакторинг---------------------------------------
+
+// const printInfo = (obj) => {
+
+//     const namesArr = obj.names.split(",");
+//     const phonesArr = obj.phones.split(",");
+
+//     namesArr.forEach((name, i) => {
+//         console.log(`${namesArr[i]}: ${phonesArr[i]}`);
+        
+//     });
+// }
+// printInfo({
+// names: "Jacob,William,Solomon,Artemis",
+// phones:"050555333,066444222,099999888,077888666"});
+
+//===========================================================================================
+
+/**
+ * Array.prototype.map()
+ * - Поелементо перебирає оригінальний масив
+ * - Не змінює оригінальний масив
+ * - Повертає новий масив такої ж довжини
+ */
+
+const allCars = [
+    { make: "Honda", model: "CR-V", amount: 14, price: 24045 },
+    { make: "Honda", model: "Accord", amount: 2, price: 22455 },
+    { make: "Mazda", model: "Mazda 6", amount: 8, price: 24195 },
+    { make: "Mazda", model: "CX-9", amount: 7, price: 31520 },
+    { make: "Toyota", model: "4Runner", amount: 19, price: 34210 },
+    { make: "Toyota", model: "Sequoia", amount: 16, price: 45560 },
+    { make: "Toyota", model: "Tacoma", amount: 4, price: 24320 },
+    { make: "Ford", model: "F-150", amount: 11, price: 27110 },
+    { make: "Ford", model: "Fusion", amount: 13, price: 22120 },
+    { make: "Ford", model: "Explorer", amount: 6, price: 31660 },
+];
+
+/**
+ * Нехай функція getModels повертає масив моделей (поле model) всіх автомобілів.
+ */
+// const getModels = (cars) => {
+
+//     const arr = [];
+//     cars.forEach(item => {
+//         arr.push(item.model);
+//     });
+//     return arr;
+// }
+
+// console.log(getModels(allCars));
+//----------------------------------------------------------------------------------
+// const getModels = (cars) => {
+//     return cars.map((item) => {
+//         return item.model;
+//     });
+// }
+
+// console.log(getModels(allCars));
+//---------------------------------------------------------------------------------
+
+// const makeCarWithDiscount = (cars, discount) => {
+//     return cars.map((car) => {
+//     return {...car, price: car.price * (1 - discount)}//за допомогою спред оператора розгорнули/повернули такий самий об'єкт і замінили влативісь price
+//     });
+    
+//      // return cars.map((car) => ({ ...car, price: car.price * (1 - discount) }))
+
+// }
+
+// console.table(makeCarWithDiscount(allCars, 0.2));
+
+
+//===================================================================================
+
+// const players = [
+//     { id: "player-1", name: "Mango", timePlayed: 310, points: 54, online: false },
+//     { id: "player-2", name: "Poly", timePlayed: 470, points: 92, online: true },
+//     { id: "player-3", name: "Kiwi", timePlayed: 230, points: 48, online: true },
+//     { id: "player-4", name: "Ajax", timePlayed: 150, points: 71, online: false },
+//     { id: "player-5", name: "Chelsy", timePlayed: 80, points: 48, online: true },
+// ];
+  
+// /*
+// * Збільшуємо кількість годин гравця за id
+// */
+// // const playerId = "player-3";
+
+// // const newArr = players.map((item) => {
+// //     if(item.id === playerId) {
+// //         return {
+// //             ...item,
+// //             timePlayed: item.timePlayed + 100
+// //         }
+// //     }
+
+// //     return item;
+// // })
+
+
+// console.table(newArr);
+
+
+//========================================FLAT===============================
+
+// const tweets = [
+//     { id: "000", likes: 5, tags: ['js', 'css'] },
+//     { id: "001", likes: 5, tags: ['js', 'react'] },
+//     { id: "002", likes: 5, tags: ['hnml', 'css'] },
+//     { id: "003", likes: 5, tags: ['cs++', 'js'] },
+//     { id: "004", likes: 5, tags: ['js', 'css'] },
+// ];
+
+// const tags = tweets.flatMap(item => item.tags);// розгортає тільки перший рівень вкладенності
+
+// console.log(tags);
