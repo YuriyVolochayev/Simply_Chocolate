@@ -378,7 +378,7 @@
 
 @media screen and (min-width: 1158px) {
   .benefits {
-    max-width: 1200px;
+    max-width: 1158px;
     height: auto;
     margin: 0 auto;
     padding: 0;
@@ -553,7 +553,7 @@
 
 @media screen and (min-width: 1158px) {
   .ingredients {
-    max-width: 1200px;
+    max-width: 1158px;
     margin-top: 100px;
   }
 
@@ -562,10 +562,12 @@
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
-    gap: 19px;
+    justify-content: start;
+    gap: 15px;
+    flex-basis: calc((100% - 45px) / 4);
   }
   .ingr-list-item {
-    min-width: 270px;
+    min-width: 260px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -574,7 +576,7 @@
     position: relative;
     overflow: hidden;
     border-radius: 15px;
-    width: calc((100% - 57) / 4);
+    /* width: calc((100% - 57) / 4); */
   }
 
   .overlay {
@@ -599,7 +601,7 @@
 
   .overlay-title {
     font-weight: 600;
-    font-size: 18px;
+    font-size: 16px;
     letter-spacing: -0.03em;
     text-transform: uppercase;
   }
@@ -631,7 +633,7 @@
 
   .overlay-text {
     max-width: 230px;
-    font-size: 14px;
+    font-size: 12px;
     line-height: l(18, 14);
     letter-spacing: -0.02em;
     margin-top: 6px;
@@ -701,13 +703,11 @@
 .made-list {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   gap: 18px;
 }
 .made-list-item {
   position: relative;
-  padding-left: 1.5rem;
+  padding-left: 1rem;
 }
 
 .made-list-item::before {
@@ -732,6 +732,76 @@
 }
 
 @media screen and (min-width: 768px) {
+  .made {
+    max-width: 768px;
+    margin-top: 86px;
+  }
+  .made .container {
+    padding: 0 77px;
+  }
+
+  .made-title {
+    max-width: 205px;
+    margin-bottom: 50px;
+    font-size: 24px;
+    line-height: 1.17;
+    letter-spacing: -0.03em;
+  }
+
+  .img-colection {
+    position: relative;
+    width: 100%;
+    li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  .list-wrapper {
+    align-items: start;
+    gap: 28px;
+    padding: 32px;
+  }
+  .made-subtitle {
+    max-width: 335px;
+  }
+  .made-list-text {
+    max-width: 464px;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+  }
 }
 @media screen and (min-width: 1158px) {
+  .made {
+    max-width: 1158px;
+    margin-top: 100px;
+  }
+  .made .container {
+    padding: 0 32px;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: calc((100% - 20) / 2);
+  }
+
+  .img-colection {
+    width: 600px;
+
+    img {
+      width: 600px;
+    }
+  }
+
+  .made-list-text {
+    max-width: 425px;
+  }
 }
