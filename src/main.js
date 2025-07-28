@@ -1329,18 +1329,18 @@
  * - Повертає новий масив такої ж довжини
  */
 
-const allCars = [
-    { make: "Honda", model: "CR-V", amount: 14, price: 24045 },
-    { make: "Honda", model: "Accord", amount: 2, price: 22455 },
-    { make: "Mazda", model: "Mazda 6", amount: 8, price: 24195 },
-    { make: "Mazda", model: "CX-9", amount: 7, price: 31520 },
-    { make: "Toyota", model: "4Runner", amount: 19, price: 34210 },
-    { make: "Toyota", model: "Sequoia", amount: 16, price: 45560 },
-    { make: "Toyota", model: "Tacoma", amount: 4, price: 24320 },
-    { make: "Ford", model: "F-150", amount: 11, price: 27110 },
-    { make: "Ford", model: "Fusion", amount: 13, price: 22120 },
-    { make: "Ford", model: "Explorer", amount: 6, price: 31660 },
-];
+// const allCars = [
+//     { make: "Honda", model: "CR-V", amount: 14, price: 24045 },
+//     { make: "Honda", model: "Accord", amount: 2, price: 22455 },
+//     { make: "Mazda", model: "Mazda 6", amount: 8, price: 24195 },
+//     { make: "Mazda", model: "CX-9", amount: 7, price: 31520 },
+//     { make: "Toyota", model: "4Runner", amount: 19, price: 34210 },
+//     { make: "Toyota", model: "Sequoia", amount: 16, price: 45560 },
+//     { make: "Toyota", model: "Tacoma", amount: 4, price: 24320 },
+//     { make: "Ford", model: "F-150", amount: 11, price: 27110 },
+//     { make: "Ford", model: "Fusion", amount: 13, price: 22120 },
+//     { make: "Ford", model: "Explorer", amount: 6, price: 31660 },
+// ];
 
 /**
  * Нехай функція getModels повертає масив моделей (поле model) всіх автомобілів.
@@ -1386,7 +1386,6 @@ const allCars = [
 //     { id: "player-4", name: "Ajax", timePlayed: 150, points: 71, online: false },
 //     { id: "player-5", name: "Chelsy", timePlayed: 80, points: 48, online: true },
 // ];
-  
 // /*
 // * Збільшуємо кількість годин гравця за id
 // */
@@ -1420,3 +1419,98 @@ const allCars = [
 // const tags = tweets.flatMap(item => item.tags);// розгортає тільки перший рівень вкладенності
 
 // console.log(tags);
+
+
+//=====================================================FILTER========================================
+// метод перебирає масив і повертає новий масив з елементами або порожній;
+// в масив додає елементи, що задовільняють умови колбек функціїї.
+
+
+// const array = [1, 5, 8, 10, 15, 22, 74, 65, 42];
+
+// const filtered = array.filter((elem, index, arr) => elem > 25);
+// const filtered2 = array.filter((elem, index, arr) => elem > 100);
+
+// console.log(filtered);
+// console.log(filtered2);
+
+
+// const allCars = [
+//     { make: "Honda", model: "CR-V", type: "sedan", amount: 14, price: 24045 },
+//     { make: "Honda", model: "Accord", type: "sport", amount: 2, price: 22455 },
+//     { make: "Mazda", model: "Mazda 6", type: "truck", amount: 8, price: 24195 },
+//     { make: "Mazda", model: "CX-9", type: "truck", amount: 7, price: 31520 },
+//     { make: "Toyota", model: "4Runner", type: "truck", amount: 19, price: 34210 },
+//     { make: "Toyota", model: "Sequoia", type: "sedan", amount: 16, price: 45560 },
+//     { make: "Toyota", model: "Tacoma", type: "truck", amount: 4, price: 24320 },
+//     { make: "Ford", model: "F-150", type: "sedan", amount: 11, price: 27110 },
+//     { make: "Ford", model: "Fusion", type: "truck", amount: 13, price: 22120 },
+//     { make: "Ford", model: "Explorer", type: "sport", amount: 6, price: 31660 },
+// ];
+
+//-------------------------------------------------------------------
+
+// const filterByPrice = (cars, treshhold) => {
+//     return cars.filter((item) => item.price < treshhold);
+// }
+
+// console.table(filterByPrice(allCars, 30000));
+
+//-------------------------------------------------------------------
+
+// const getCarWithType = (cars, type) => {
+//     return cars.filter((car) => car.type === type);
+// }
+
+// console.table(getCarWithType(allCars, "sedan"));
+//-------------------------------------------------------------------
+
+
+//===============================FIND================================
+// поелементно перебирає масив;
+// повертає перший елемент, що задовільняє умови функціїї;
+
+// const array = [1, 5, 8, 10, 15, 22, 74, 65, 42];
+
+// const num = array.find((elem, index, arr) => elem > 20);
+
+// console.log(num);
+
+//-------------------------------------------------------------------
+
+//=====================================EVERY та SOME=============================
+//метод EVERY перебирає масив і повертає true, якщо всі елементи задовільнять умову
+
+
+
+
+// const players = [
+//     { id: "player-1", name: "Mango", timePlayed: 310, points: 54, online: false },
+//     { id: "player-2", name: "Poly", timePlayed: 470, points: 92, online: true },
+//     { id: "player-3", name: "Kiwi", timePlayed: 230, points: 48, online: true },
+//     { id: "player-4", name: "Ajax", timePlayed: 150, points: 71, online: false },
+//     { id: "player-5", name: "Chelsy", timePlayed: 110, points: 48, online: true },
+// ];
+
+// const isAllOnline = players.every((player) => player.online);
+// const isTime = players.every((player) => player.timePlayed > 100);
+
+// console.log(isAllOnline);
+// console.log(isTime);
+
+//метод SOME перебирає масив і повертає true, якщо хоча б один елементи задовільнять умову
+
+
+// const isAllOnline = players.some((player) => player.online);
+
+// console.log(isAllOnline);
+
+
+
+
+//======================================REDUCE=============================================
+
+
+
+
+
