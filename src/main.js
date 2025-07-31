@@ -1639,4 +1639,285 @@
 
 //==================================КОНТЕКСТ МЕТОДІВ ОБ'ЄКТІВ===============================================================
 
+// function foo() {
+//     console.log("foo", this);
+    
+// }
 
+// const user2 = {
+//     name: "Mango",
+// }
+
+// user2.showThis = foo;
+// console.log(user2.showThis);
+
+// user2.showThis();
+
+
+//========================ВИКЛИК БЕЗ КОНТЕКСТУ, АЛЕ ОГОЛОШЕНА ЯК МЕТОД ОБ'ЄКТУ====================================
+
+// const user2 = {
+//     name: "Mango",
+//     showThis: () => {
+//         console.log(this);
+//     }
+// }
+
+// const foo = user2.showThis;
+
+// foo();
+
+//========================КОНТЕКСТ У КОЛБЕК ФУНКЦІЯХ====================================
+
+// ЯКЩО ПЕРЕДАВАТИ МЕТОД ОБ'ЄКТУ ЯК КОЛБЕК ФУНКЦІЮ ВІН ВТРАЧАТИМЕ СВІЙ КОНТЕКСТ
+
+
+// const user = {
+//     name: "Mango",
+//     showThis() {
+//         console.log("showThis", this);
+//     }
+// }
+
+// function foo(callback) {
+//     // callback()
+//     console.log(callback);
+//     callback()
+// }
+
+// // foo(() => console.log("lalala"));
+// foo(user.showThis);
+//----------------------------------------------------------------
+// const foo = () => {
+//     console.log(this);
+    
+// }
+// foo()
+
+//========================ЗАДАЧКИ====================================
+
+// написати метод, який приймає назву каменю
+// розраховує та повертає загальну вартість каменів з таким ім'ям, ціною та кількістю
+
+// const chopShop = {
+//     stones: [
+//         { name: "Emerald", price: 1000, quantity: 3 },
+//         { name: "Diamond", price: 1500, quantity: 2 },
+//         { name: "Sapphire", price: 1200, quantity: 4 },
+//         { name: "Ruby", price: 2000, quantity: 5 },
+//     ],
+//     calcTotalPrice(stoneName) {
+//         // console.log(this.stones); - достукаюся до об'єкта;
+//         const stone = this.stones.find(item => item.name === stoneName); // поверни мені item у якого властивість name яка дорівнює вхідному параметру(у виклиці методу)
+
+//         if (!stone) {
+//             return `${stoneName} not found`;
+//         }
+//         return stone.price * stone.quantity;
+//     }
+// };
+
+// console.log(chopShop.calcTotalPrice("Sapphire"));
+// console.log(chopShop.calcTotalPrice("Emerald"));
+// console.log(chopShop.calcTotalPrice("Diamond"));
+// console.log(chopShop.calcTotalPrice("Ruby"));
+// console.log(this.stones);
+
+
+//===============================КОНТЕКСТ ВИКОНАННЯ ФУНКЦІЇ. МЕТОДИ: call, apply, bind=============================
+
+// function foo(x, y) {
+//     console.log(this);
+    
+// }
+
+// const objA = {
+//     a: 5,
+//     b: 10,
+// }
+
+// const objB = {
+//     a: 500,
+//     b: 100,
+// }
+// // objA.funA = foo; // створили властивість об'єкта в яку передали посилланя на функцію
+// // foo.call(objA, "lalala", 5);// передає в this об'єкт;
+// // foo.call(objB);
+
+// //-------------------------------
+
+// foo.apply(objA, [10, "tututu", [1, 2, 3]]);// різниця з методом call полягає в тому, що всі параметри передаються масивом (окрім першого - об'єкта)
+
+//============================================================
+
+// function changeColor(newColor) {
+//     console.log("changeColor", this);
+//     this.color = newColor;
+    
+// }
+
+// const hat = {
+//     color: "black"
+// }
+
+// const sweater = {
+//     color: "red"
+// }
+
+// // changeColor.call(hat, "blue")
+// // console.log(hat);
+
+// // changeColor.apply(sweater, ["yellow"])
+// // console.log(sweater);
+
+// const changeHatColor = changeColor.bind(hat, "orange");
+// changeHatColor();
+// console.log(hat);
+
+// const changeSweaterColor = changeColor.bind(sweater);
+// changeSweaterColor("green");
+// console.log(sweater);
+
+
+//============================================================
+
+
+// const counter = {
+//     value: 0,
+//     increment(num) {
+//         console.log("increment", this);
+//         this.value += num;
+//     },
+
+//     decrement(num) {
+//         console.log("decrement", this);
+//         this.value -= num;
+//     }
+// }
+
+// function foo(num, callback) {
+//     callback(num)
+// }
+
+// foo(100, (num) => console.log(num + 5));
+
+// foo(10, counter.increment.bind(counter));
+// foo(5, counter.decrement.bind(counter));
+
+// console.log(counter);
+
+//=========================ПРОТОТИП ОБ'ЄКТА===================================
+
+// // власні і невласні властивості
+
+// const animals = {
+//     legs: 4,
+// }
+
+// const dog = Object.create(animals);
+// dog.name = "Patron";
+
+
+// console.log(dog);
+// // console.log(dog.name);
+// // console.log(dog.legs);
+// // console.log(dog.hasOwnProperty("name"));
+// // console.log(dog.hasOwnProperty("legs"));
+
+// // for (const key in dog) {
+// //     if (dog.hasOwnProperty(key)) {
+// //         console.log(dog[key]);
+// //     }
+// // }
+
+// const keys = Object.keys(dog);
+// console.log(keys);
+
+//-----------------------ПОШУК ВЛАСТИВОСТЕЙ. ЛАНЦЮЖКИ ПРОТОТИПІВ----------------------------------------
+
+// const objC = { c: "objC" };
+
+// const objD = Object.create(objC);
+// objD.d = "objD";
+
+// const objB = Object.create(objD);
+// objB.b = "objB";
+
+// console.log(objC);
+// console.log(objD);
+// console.log(objB);
+
+
+
+
+// ------------------------------------ЗАДАЧКИ------------------------------
+
+// const cruiseControl = {
+//     speed: 0,
+//     brand: "BMW",
+//     accelerate(a) {
+// this.speed += a
+//     },
+
+//     decrease(b) {
+//         if (this.speed <= 0) {
+//             console.log("Авто зупинилось");
+            
+//         }
+// this.speed -= b
+//     }
+// }
+
+
+// cruiseControl.accelerate(50);
+// cruiseControl.decrease(50);
+// cruiseControl.decrease(50);
+
+
+// console.log(cruiseControl.speed);
+
+// ------------------------------------------------------
+
+// const SPEED = 60;
+
+// const bmw = {
+//     brand: "BMW",
+//     speed: 40,
+// }
+// const audi = {
+//     brand: "AUDI",
+//     speed: 80,
+// }
+
+// function speedSensor(maxSpeed) {
+
+//     // if (this.speed <= maxSpeed) {
+//     //     return `Автомобіль ${this.brand} рухається з безпечною швидкістю`
+//     // }
+//     // return `${this.brand} перевищує`
+    
+
+//     return this.speed <= maxSpeed ?
+//         `Автомобіль ${this.brand} рухається з безпечною швидкістю` :
+//         `${this.brand} перевищує`
+// }
+
+// console.log((speedSensor.call(bmw, SPEED)));
+// console.log((speedSensor.call(audi, SPEED)));
+
+
+
+
+
+
+
+
+
+
+
+
+//============================================================
+//============================================================
+//============================================================
+//============================================================
+//============================================================
