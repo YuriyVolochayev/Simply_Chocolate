@@ -1905,18 +1905,84 @@
 // console.log((speedSensor.call(bmw, SPEED)));
 // console.log((speedSensor.call(audi, SPEED)));
 
+//===========================КЛАСИ=================================
+//---------Оголошення класу
+
+//--Клас - інструмент для створення однотипних об'єктів
+
+//--Створення класу //--Конструктор класу //--Методи класу //-- Приватні властивості //-- Геттери та сеттери //-- Статичні властивості
+
+// class Car {
+//     static qty = 0;//статична властівість яка доступна лише класу
+//     static increment() {// статичний метод, який буде збільшувати значення кількості автомобілів. Додається в конструктор
+//         Car.qty +=1
+//     }
+// //     constructor(brand, model, price) {
+// //         this.brand = brand;
+// //         this.model = model;
+// //         this.price = price;
+//     // }
+    
+//     #price;// робимо властивість price приватною. Це не дасть нам можливість звертатися до властивості безпосередньо з об'єкту.
+
+//     constructor(obj) {//кращий варіант . 
+//         this.brand = obj.brand;
+//         this.model = obj.model;
+//         this.#price = obj.price;
+//         Car.increment();
+//     }
+//         getModel() {
+//         return this.model;
+//     }
+//     getBrand() {
+//         return this.brand;
+//     }
+//     changeModel(newModel) {
+//         this.model = newModel;
+//     }
+//     get price() {
+//         return this.#price; // створення геттера для отримання приватної властивості
+//     }
+
+//     set price(newPrise) {// сеттер для зміни приватної властивості
+//         if (this.checkType(newPrise, "number")) {
+//             this.#price = newPrise;
+//             return;
+//         }
+//         console.log("Invalid price");
+        
+//     }
+//     checkType(data, type) {
+// if (data === type) {
+//     return true;
+//         }
+//         return false
+//     }
+// }
+// // constructor - метод, що автоматично запускається одразу після створення екземпляру класу.
+// // запускається в контексті новогостворенного об'єкта
+// // const bmw = new Car("bmw", "X5", 10000);// bmw.constructor
+// // const bmw = new Car("bmw", "X5", 10000);// bmw.constructor
+// const bmw = new Car({brand: "bmw", model: "X5", price: 10000});
+// const audi = new Car({brand: "audi", model: "A6", price: 11000});
+// const audi2 = new Car({brand: "audi", model: "A6", price: 11000});
+// const audi3 = new Car({brand: "audi", model: "A6", price: 11000});
+// bmw.changeModel("Alpina");// всі методи зберігаються у прототипі
+// // console.log(bmw.model);
+// audi.changeModel("Q8");
+// // console.log(audi.model);
+// // console.log(bmw.price);// виклик геттеру. Взамодія як з властивістю без круглих дужок, не дивлячись на те що це метод.
+// bmw.price = 12000;
+// audi.price = 15000;// виклик сеттеру
+// console.log(bmw.price);
+// console.log(audi.price);
+// console.log(Car.qty);
 
 
 
 
 
 
-
-
-
-
-
-//============================================================
 //============================================================
 //============================================================
 //============================================================
