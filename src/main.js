@@ -1925,7 +1925,7 @@
     
 //     #price;// робимо властивість price приватною. Це не дасть нам можливість звертатися до властивості безпосередньо з об'єкту.
 
-//     constructor(obj) {//кращий варіант . 
+//     constructor(obj) {//кращий варіант .
 //         this.brand = obj.brand;
 //         this.model = obj.model;
 //         this.#price = obj.price;
@@ -1978,12 +1978,140 @@
 // console.log(audi.price);
 // console.log(Car.qty);
 
+//============================НАСЛІДУВАННЯ КЛАСІВ================================
+
+// class User {
+//     constructor(name, age) {
+//         this.name = name;
+//         this.age = age;
+// }
+// }
+
+// class Student {
+// constructor(name, gender) {
+//         this.name = name;
+//         this.gender = gender;
+// }
+// }
+
+// //----------------------------------
+
+// class Hero {
+//     constructor(obj) {
+//         this.name = obj.name;
+//         this.xp = obj.xp;
+
+//     }
+
+//     gainXp(amount) {
+//         console.log(`${this.name} reecceived ${amount} xp`);
+//         this.xp += amount;
+        
+//     }
+// }
+
+// class Warrior extends Hero {
+//     constructor(obj) {
+//         super({ name: obj.name, xp: obj.xp });
+//         this.weapon = obj.weapon;
+//     }
+
+//     attack() {
+//         console.log("Atack");
+        
+//     }
+// }
+
+// const arthas = new Warrior ({name: "Arthas", xp: 1000, weapon: "sword"})
+
+// console.log(arthas);
+
+// class Mage extends Hero {
+    
+//     constructor(parameters) {
+//         super({ name: obj.name, xp: obj.xp });
+//         cast() {
+//             console.log(`${this.name} cast spell`);
+            
+//         }
+//     }
+// }
+// const khadgar = new Mage ({name: "Khadgar", xp: 900, spells: ["fireball", ["ice"]]})
+//============================================================
+
+// class Blogger {
+//     constructor(obj) {
+//         this.email = obj.email;
+//         this.age = obj.age;
+//         this.numberOfPosts = obj.numberOfPosts;
+//         this.topics = obj.topics;
+//     }
+
+//     getInfo() {
+//         return `User ${this.email} is ${this.age} years old made ${this.numberOfPosts} posts`
+//     }
+
+//     updatePost(value) {
+//         this.numberOfPosts += value
+//     }
+// }
+// const petya = new Blogger( {
+//     email: "hananamity@gmail.com",
+// age: 22,
+// numberOfPosts: 10,
+// topics: ["tech", "games"],
+// })
+// petya.updatePost(10);
+// console.log(petya);
+// console.log(petya.getInfo());
 
 
+//============================================================
+
+/**
+ * Напиши клас User який створює об'єкт із властивостями login та email.
+ * Оголоси приватні властивості #login та #email, доступ до яких зроби через
+ * гетер та сетер login та email.
+ */
+
+// class User {
+//     #login;
+//     #email;
+
+//     constructor(login, email) {
+//         this.#login = login;
+//         this.#email = email;
+//     }
+
+//     get login() {
+//         return this.#login;
+//     }
+
+//     set login(newLogin) {
+//         this.#login = newLogin;
+//     }
+
+//     get email() {
+//         return this.#email;
+//     }
+
+//     set email(newEmail) {
+//         this.#email = newEmail;
+//     }
+// }
 
 
+// const alice = new User("Alice", "alice@gmail.com")
 
+
+//============================ЛЕКЦІЯ 13================================
 //============================================================
 //============================================================
 //============================================================
 //============================================================
+//============================================================
+
+//============================================================
+//============================================================
+//============================================================
+
