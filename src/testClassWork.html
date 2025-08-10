@@ -28,22 +28,28 @@
     <button class="btn" id="magic-button" type="button">Magic Button</button>
 
     <ul class="list">
-      <li class="list-item"><a class="list-link" href=""></a>TOTO</li>
-      <li class="list-item"><a class="list-link" href=""></a>LALA</li>
-      <li class="list-item"><a class="list-link" href=""></a>PIPI</li>
-      <li class="list-item"><a class="list-link" href=""></a>TRULALA</li>
+      <li class="list-item"><a class="list-link" href="/toto"></a>TOTO</li>
+      <li class="list-item"><a class="list-link" href="/lala"></a>LALA</li>
+      <li class="list-item"><a class="list-link" href="/pipi"></a>PIPI</li>
+      <li class="list-item">
+        <a class="list-link" href="/trulala"></a>TRULALA
+      </li>
     </ul>
 
     <img
       class="main-img"
       src="./img/how_its_made_process_desk.jpg"
       alt="how_its_made_process_desk"
-      width="200"
+      width="400"
     />
 
-    <button class="btn" id="create" type="button">create</button>
-    <button class="btn" id="delete" type="button">delete</button>
-    <button class="btn" id="edit" type="button">edit</button>
+    <button class="btn" id="create" type="button" data-action="add">
+      create
+    </button>
+    <button class="btn" id="delete" type="button" data-action="remove">
+      delete
+    </button>
+    <button class="btn" id="edit" type="button" data-action="edit">edit</button>
 
     <script src="./07-transactions.js"></script>
     <script src="./main.js"></script>
