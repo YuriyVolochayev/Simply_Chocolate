@@ -44,6 +44,8 @@ mainImg.alt = "kurwa";
 
 console.log(mainImg.alt);
 
+const mainTitle = document.querySelector(".title")
+console.dir(mainTitle.textContent);
 
 
 
